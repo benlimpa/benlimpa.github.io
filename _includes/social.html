@@ -116,3 +116,6 @@
             </div>
             {% include scripts/wechatModal.html %}
             {% endif %}
+            {%- if site.cv_rel_url -%}
+            <a href="{{ site.baseurl }}{{ site.cv_rel_url }}"><i class="ai ai-cv"></i></a>
+            {% endif %}
