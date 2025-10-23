@@ -26,4 +26,4 @@ latest_posts:
 
 I'm a PhD student in Computer Science at UCLA advised by [Miryung Kim](http://web.cs.ucla.edu/~miryung/).
 
-My interests include fuzz testing, software debugging, and machine learning. My current research goal is to improve the efficiency and efficacy of fuzz testing for compilers and similar subject programs that require structured inputs.
+My research focuses on fuzz testing and software debugging, particularly for projects like MLIR compilers. My goal is to minimize the manual effort of building domain-specific fuzzers by automatically inferring specialized mutations, constraints, and grammars from existing software artifacts like test cases, error feedback, and documentation.
