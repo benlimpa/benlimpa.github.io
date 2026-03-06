@@ -6,7 +6,7 @@ subtitle: Computer Science PhD Candidate at UCLA
 
 profile:
   align: right
-  image: profile_vert.jpg
+  image: profile_2.jpg
   image_circular: false # crops the image to make it circular
   more_info: 
 
