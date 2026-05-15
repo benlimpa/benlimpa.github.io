@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light dark;
+
+  --bg: #fdfdfc;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #2557b0;
+  --rule: #e6e6e3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111315;
+    --fg: #e8e8e6;
+    --muted: #a0a0a0;
+    --accent: #7aa8e8;
+    --rule: #2a2c2e;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-inline-size: 62ch;
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw + 1rem, 4rem) 1.25rem 1.25rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-block-end: 2rem;
+}
+
+header img {
+  inline-size: 7rem;
+  block-size: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95em;
+}
+
+section {
+  margin-block-end: 2rem;
+}
+
+section p {
+  margin-block: 0 1rem;
+}
+
+section p:last-child {
+  margin-block-end: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.06em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+address {
+  font-style: normal;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.links li::before {
+  content: "→ ";
+  color: var(--muted);
+  margin-inline-end: 0.15em;
+}
+
+footer {
+  max-inline-size: 62ch;
+  margin-inline: auto;
+  padding: 2rem 1.25rem;
+  border-block-start: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  header img {
+    inline-size: 6rem;
+  }
+}
