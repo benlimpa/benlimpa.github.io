@@ -220,3 +220,60 @@ footer .footer-inner {
     block-size: 6rem;
   }
 }
+
+.page-header {
+  margin-block-end: 2rem;
+}
+
+.page-header .eyebrow {
+  color: var(--muted);
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  margin-block-end: 0.4rem;
+}
+
+.page-header .subtitle {
+  max-inline-size: 48ch;
+}
+
+.page-nav {
+  border-block-start: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-block-start: 2rem;
+  padding-block-start: 1rem;
+}
+
+.policy h2,
+.details h2 {
+  font-size: 1.05em;
+  line-height: 1.3;
+  margin-block: 1.75rem 0.45rem;
+}
+
+.policy h2:first-child,
+.details h2:first-child {
+  margin-block-start: 0;
+}
+
+.policy ul,
+.details ul {
+  padding-inline-start: 1.25rem;
+}
+
+.policy li,
+.details li {
+  margin-block: 0.35rem;
+}
+
+.policy-meta {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-block: -1.25rem 1.75rem;
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Agent · Ben Limpanukorn</title>
+    <meta name="description" content="Email Agent is a local command-line tool for previewed, undoable Gmail mailbox sweeps.">
+    <meta name="author" content="Ben Limpanukorn">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Email Agent · Ben Limpanukorn">
+    <meta property="og:description" content="A local command-line tool for previewed, undoable Gmail mailbox sweeps.">
+    <meta property="og:url" content="https://ben.limpanu.com/email-agent/">
+    <link rel="canonical" href="https://ben.limpanu.com/email-agent/">
+    <link rel="stylesheet" href="../style.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <main>
+      <button type="button" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">A personal tool by Ben Limpanukorn</p>
+          <h1>Email Agent</h1>
+          <p class="subtitle">Previewed, undoable mailbox sweeps from the terminal.</p>
+        </div>
+      </header>
+
+      <section>
+        <p>
+          Email Agent is a local command-line tool I use to synchronize and
+          organize my own Gmail accounts. It keeps the working copy on my
+          computer, where I can search messages and review a proposed sweep
+          before anything moves.
+        </p>
+      </section>
+
+      <section class="details">
+        <h2>What it does</h2>
+        <ul>
+          <li>Pulls mailbox messages into a local Maildir and search index.</li>
+          <li>Shows a grouped preview before moving messages between folders.</li>
+          <li>Keeps a manifest so user-directed moves can be undone.</li>
+          <li>Does not send email or permanently delete messages.</li>
+        </ul>
+      </section>
+
+      <nav class="page-nav" aria-label="Email Agent links">
+        <a href="privacy/">Privacy policy</a>
+        <a href="https://ben.limpanu.com/">Ben's homepage</a>
+        <a href="mailto:ben@limpanu.com">Contact</a>
+      </nav>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <small>&copy; 2026 Ben Limpanukorn</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("theme-toggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var isDark =
+          root.dataset.theme === "dark" ||
+          (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = isDark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy · Email Agent</title>
+    <meta name="description" content="Privacy policy for Ben Limpanukorn's local Email Agent.">
+    <meta name="author" content="Ben Limpanukorn">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy · Email Agent">
+    <meta property="og:description" content="Privacy policy for Ben Limpanukorn's local Email Agent.">
+    <meta property="og:url" content="https://ben.limpanu.com/email-agent/privacy/">
+    <link rel="canonical" href="https://ben.limpanu.com/email-agent/privacy/">
+    <link rel="stylesheet" href="../../style.css">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <main class="policy">
+      <button type="button" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+
+      <header class="page-header">
+        <div>
+          <p class="eyebrow"><a href="../">Email Agent</a></p>
+          <h1>Privacy policy</h1>
+          <p class="subtitle">How the local Email Agent handles Google user data.</p>
+        </div>
+      </header>
+
+      <p class="policy-meta">Effective September 2, 2026</p>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          Email Agent is a personal command-line tool operated by Ben
+          Limpanukorn. It is used for my own Gmail accounts and is not a
+          hosted service offered to other users.
+        </p>
+
+        <h2>Google data the tool accesses</h2>
+        <p>
+          When I authorize an account, Email Agent accesses Gmail messages,
+          message metadata, folders, and the account identity needed to
+          synchronize and organize that mailbox. It may move messages between
+          folders and save drafts when explicitly requested. It does not send
+          email or permanently delete messages.
+        </p>
+
+        <h2>How the data is used</h2>
+        <p>
+          Gmail data is used only to provide the tool's local mailbox mirror,
+          search, preview, and user-directed folder-move features. It is not
+          used for advertising, profiling, or training machine-learning
+          models.
+        </p>
+
+        <h2>Storage and sharing</h2>
+        <p>
+          Messages and their local search index are stored on my computer in
+          a local Maildir and notmuch database. OAuth client credentials and
+          access tokens are stored locally with encryption. Email Agent has
+          no developer-operated backend, and I do not sell or share Gmail
+          data with third parties. Gmail remains the service used to access
+          the account and is governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        </p>
+
+        <h2>Retention and control</h2>
+        <p>
+          Local copies remain on the computer until I delete them. I can
+          revoke Email Agent's access from the Google Account security page
+          and remove the local mailbox, index, and token files at any time.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy can be sent to
+          <a href="mailto:ben@limpanu.com">ben@limpanu.com</a>.
+        </p>
+      </section>
+
+      <nav class="page-nav" aria-label="Privacy policy links">
+        <a href="../">Email Agent homepage</a>
+        <a href="https://ben.limpanu.com/">Ben's homepage</a>
+      </nav>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <small>&copy; 2026 Ben Limpanukorn</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("theme-toggle").addEventListener("click", function () {
+        var root = document.documentElement;
+        var isDark =
+          root.dataset.theme === "dark" ||
+          (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+        var next = isDark ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>
